@@ -2,7 +2,7 @@
 
 A powerful Streamlit application for interactive stock labeling, trading simulation with realistic market conditions, and advanced performance analysis.
 
-![Interactive Chart Labeling](./media/a1.png)
+![Interactive Chart Labeling](media/a1.png)
 
 ## Key Features
 

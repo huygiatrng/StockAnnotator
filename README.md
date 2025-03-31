@@ -1,31 +1,65 @@
-# StockAnnotator 📈
+# Label Trading Stock
 
-StockAnnotator is an interactive Streamlit-based web app that allows you to visualize stock data and manually annotate it with **Buy** and **Sell** labels. This tool is perfect for traders, analysts, or anyone who wants to manually tag specific stock price movements for further analysis.
+A Streamlit application for interactive stock labeling and trading simulation.
 
 ## Features
 
-- **Upload CSV**: Upload your stock data in CSV format.
-- **Interactive Chart**: Visualize stock prices over time using a line chart.
-- **Label Modes**: Easily toggle between Buy Mode, Sell Mode, and No Label Mode.
-- **Annotations**: Click on the chart to add Buy or Sell annotations directly to the graph.
-- **Undo or Clear**: Quickly undo the last annotation or clear all annotations.
-- **Download Annotations**: Export your Buy and Sell annotations as CSV files.
+- Interactive chart labeling for stock price action
+- Automatic trade signal generation using technical indicators
+- Trading simulation with customizable parameters
+- Performance metrics and equity curve visualization
+- GPU acceleration for large datasets (optional)
 
-## How to Use
+## Project Structure
 
-1. **Upload Your CSV File**: Select your stock data file in CSV format.
-2. **Choose X and Y Axes**: Specify the columns for the X-axis (typically dates) and the Y-axis (stock price).
-3. **Select Label Mode**: Toggle between Buy, Sell, or No Label mode.
-4. **Click on Chart**: Add annotations by clicking directly on the stock chart.
-5. **Export Your Data**: Once finished, download your Buy and Sell points in CSV format.
+```
+label_trading_stock/
+├── app/                      # Main application package
+│   ├── core/                 # Core business logic
+│   │   ├── data_loader.py    # Data loading utilities
+│   │   ├── indicators.py     # Technical indicator calculations
+│   │   ├── labeling.py       # Automatic labeling algorithms
+│   │   └── simulation.py     # Trading simulation engine
+│   ├── utils/                # Utility functions
+│   │   └── gpu_helpers.py    # GPU acceleration utilities
+│   ├── visualization/        # Visualization components
+│   │   └── charts.py         # Chart creation functions
+│   ├── ui/                   # User interface components
+│   │   └── main_app.py       # Main Streamlit UI
+│   ├── main.py               # Application entry point
+│   └── __init__.py           # Package initialization
+├── requirements.txt          # Project dependencies
+└── README.md                 # This file
+```
 
-## Preview
+## Installation
 
-![StockAnnotator Screenshot 1](https://github.com/user-attachments/assets/b8b2095e-f9ff-46f3-8949-9e46f742ce72)
+1. Clone the repository
+2. Install dependencies:
+   ```
+   pip install -r requirements.txt
+   ```
+3. Run the application:
+   ```
+   streamlit run main.py
+   ```
 
-![StockAnnotator Screenshot 2](https://github.com/user-attachments/assets/bcd42b57-ab6b-433b-96e1-2685e9af790b)
+## Optional GPU Acceleration
 
-## Notes
+For improved performance with large datasets, you can install GPU acceleration:
 
-- This tool is designed for ease of use and quick manual labeling.
-- The interface allows for simple customization with flexible options for the x and y axes.
+```
+pip install cupy-cuda11x  # Replace with appropriate CUDA version
+```
+
+## Usage
+
+1. Upload a CSV file containing stock price data
+2. Select date and price columns
+3. Calculate technical indicators (optional)
+4. Label trading points manually by clicking on the chart or use auto-labeling
+5. Run the trading simulation to evaluate performance
+
+## License
+
+MIT 

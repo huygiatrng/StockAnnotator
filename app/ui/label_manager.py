@@ -425,12 +425,8 @@ def display_label_stats():
     # Add bars for each label type
     for label, count in label_counts.items():
         percent = (count / total) * 100
-        chart_html += f"""
-        <div style="width:{percent}%; height:100%; background-color:{colors.get(label, '#9E9E9E')}; 
-                   display:flex; align-items:center; justify-content:center; color:white; font-weight:bold;">
-            {percent:.1f}%
-        </div>
-        """
+        # Add each label's bar to the chart
+        chart_html += f'<div style="width:{percent:.1f}%; height:100%; background-color:{colors.get(label, "#9E9E9E")}; display:flex; align-items:center; justify-content:center; color:white; font-weight:bold;">{percent:.1f}%</div>'
     
     chart_html += "</div>"
     
